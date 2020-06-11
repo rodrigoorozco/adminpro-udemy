@@ -10,10 +10,13 @@ import { ChartsModule } from "ng2-charts";
 
 //temporal
 import { IncrementorComponent } from "../components/incrementor/incrementor.component";
-import { ChartDonutComponent } from '../components/chart-donut/chart-donut.component';
-import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { PromisesComponent } from './promises/promises.component';
-import { RxjsComponent } from './rxjs/rxjs.component';
+import { ChartDonutComponent } from "../components/chart-donut/chart-donut.component";
+import { AccountSettingsComponent } from "./account-settings/account-settings.component";
+import { PromisesComponent } from "./promises/promises.component";
+import { RxjsComponent } from "./rxjs/rxjs.component";
+import { PipesModule } from "../pipes/pipes.module";
+import { ProfileComponent } from "./profile/profile.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     AccountSettingsComponent,
     PromisesComponent,
     RxjsComponent,
+    ProfileComponent,
   ],
   exports: [
     DashboardComponent,
@@ -33,6 +37,13 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     Charts1Component,
     PagesComponent,
   ],
-  imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule],
+  imports: [
+    SharedModule,
+    PAGES_ROUTES,
+    FormsModule,
+    ChartsModule,
+    PipesModule,
+    CommonModule,
+  ],
 })
 export class PagesModule {}
