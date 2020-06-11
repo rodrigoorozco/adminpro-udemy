@@ -7,11 +7,13 @@ import { Charts1Component } from "./charts1/charts1.component";
 import { AccountSettingsComponent } from "./account-settings/account-settings.component";
 import { PromisesComponent } from "./promises/promises.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
+import { LoginGuardGuard } from "../services/service.index";
 
 const pagesRoutes: Routes = [
   {
     path: "",
     component: PagesComponent,
+    canActivate: [LoginGuardGuard],
     children: [
       {
         path: "dashboard",
